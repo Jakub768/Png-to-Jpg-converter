@@ -6,15 +6,18 @@ Window.geometry("200x200")
 
 class app():
 
-    def __init__(self, main):
+    def __init__(self, parent):
+        self.createWidgets(parent)
+    
+    def createWidgets(self, main):
         mainFrame = Frame(main)
 
-        self.importJPGButton2 = Button(mainFrame, text="Import a PNG image", pady=20, command=self.getinfo).grid(row=0, column=0)
+        self.importJPGButton = Button(mainFrame, text="Import a PNG image", pady=20, command=self.getImage).grid(row=0, column=0)
 
         mainFrame.pack()
 
     def getImage(self):
-        print("the program works")
+        pass
 
     def convert(self):
         pass
