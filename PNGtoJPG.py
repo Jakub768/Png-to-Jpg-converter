@@ -1,24 +1,24 @@
-from tkinter import *
+from tkinter import * 
 
 Window = Tk()
 Window.title("PNGtoJPG")
-Window.geometry("600x600") 
+Window.geometry("200x200")
 
 class app():
 
-    def __init__(self, parent):
-        self.objects(parent)
-    
-    def objects(self, main):
+    def __init__(self, main):
         mainFrame = Frame(main)
-        mainFrame.grid(column=0, row=0)
 
-        self.importJPGButton = Button(main, text="Import a JPG image", command=self.getinfo)
-        self.importJPGButton.grid(column=1,row=1)
+        self.importJPGButton2 = Button(mainFrame, text="Import a PNG image", pady=20, command=self.getinfo).grid(row=0, column=0)
 
-    def getinfo(self):
+        mainFrame.pack()
+
+    def getImage(self):
         print("the program works")
-    
+
+    def convert(self):
+        pass
+
 p = app(Window)
 Window.mainloop()
         
