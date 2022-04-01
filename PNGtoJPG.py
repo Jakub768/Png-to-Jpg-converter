@@ -17,6 +17,8 @@ class app():
         self.Convert = Button(mainFrame, text="Convert to JPG", pady=5).grid(row=1, column=2)
         self.importJPGButton = Button(mainFrame, text="Import a PNG image", pady=5, command=self.getImage).grid(row=1, column=0)
 
+        self.list = Listbox(mainFrame).grid(row=1,column=1)
+
         mainFrame.pack()
 
     def getImage(self):
