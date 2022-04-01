@@ -13,8 +13,9 @@ class app():
     def createWidgets(self, main):
         mainFrame = Frame(main)
 
-        self.importJPGButton = Button(mainFrame, text="Import a JPG image", pady=5, command=self.getImage).grid(row=1, column=0)
-        self.Convert = Button(mainFrame, text="Convert to PNG", pady=5, command=self.getImage).grid(row=1, column=1)
+        self.Heading = Label(mainFrame, text="Welcome to the \n PNG to JPG converter!", font="Bold", pady=10).grid(row=0, column=1)
+        self.importJPGButton = Button(mainFrame, text="Import a PNG image", pady=5, command=self.getImage).grid(row=1, column=0)
+        self.Convert = Button(mainFrame, text="Convert to JPG", pady=5, command=self.getImage).grid(row=1, column=2)
 
         mainFrame.pack()
 
