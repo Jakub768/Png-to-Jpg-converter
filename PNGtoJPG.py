@@ -1,8 +1,9 @@
-from tkinter import * 
+from tkinter import *
+
 
 Window = Tk()
+Window.resizable(False, False)
 Window.title("PNGtoJPG")
-Window.geometry("200x200")
 
 class app():
 
@@ -12,7 +13,8 @@ class app():
     def createWidgets(self, main):
         mainFrame = Frame(main)
 
-        self.importJPGButton = Button(mainFrame, text="Import a PNG image", pady=20, command=self.getImage).grid(row=0, column=0)
+        self.importJPGButton = Button(mainFrame, text="Import a JPG image", pady=5, command=self.getImage).grid(row=1, column=0)
+        self.Convert = Button(mainFrame, text="Convert to PNG", pady=5, command=self.getImage).grid(row=1, column=1)
 
         mainFrame.pack()
 
