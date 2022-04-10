@@ -29,11 +29,15 @@ class app():
         global image_temp
 
         self.filename =  tk.filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("png files","*.png"),("all files","*.*")))
-        image_temp = Image.open(self.filename).convert()
+        image_temp = Image.open(self.filename)
 
 
     def convert(self):
-        pass
+        global image_temp
+
+        rgb_im = image_temp.convert('RGB')
+        exporttojpg = filedialog.asksaveasfilename(defaultextension='.jpg')
+        rgb_im.save(exporttojpg)
 
 p = app(Window)
 Window.mainloop()
