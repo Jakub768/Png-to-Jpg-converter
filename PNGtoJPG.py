@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 from PIL import Image
 
 Window = tk.Tk()
@@ -27,9 +28,12 @@ class app():
 
     def getImage(self):
         global image_temp
-
-        self.filename =  tk.filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("png files","*.png"),("all files","*.*")))
-        image_temp = Image.open(self.filename)
+        
+        try:
+            self.filename =  tk.filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("png files","*.png"),("all files","*.*")))
+            image_temp = Image.open(self.filename)
+        except AttributeError:
+            messagebox.showinfo('Info', 'Failed to load an image')
 
 
     def convert(self):
