@@ -33,11 +33,10 @@ class app():
 
 
     def convert(self):
-        global image_temp
 
-        rgb_im = image_temp.convert('RGB')
-        exporttojpg = filedialog.asksaveasfilename(defaultextension='.jpg')
-        rgb_im.save(exporttojpg)
+        self.rgb_im = image_temp.convert('RGB')
+        self.exporttojpg = filedialog.asksaveasfilename(defaultextension='.jpg')
+        self.rgb_im.save(self.exporttojpg)
 
 p = app(Window)
 Window.mainloop()
